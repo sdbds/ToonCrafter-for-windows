@@ -8,3 +8,5 @@ checkpoints
 results
 backup
 LOG
+huggingface
+venv
