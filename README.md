@@ -214,12 +214,28 @@ Currently, our ToonCrafter can support generating videos of up to 16 frames with
 
 ## ⚙️ Setup
 
-### Install Environment via Anaconda (Recommended)
-```bash
-conda create -n tooncrafter python=3.8.5
-conda activate tooncrafter
-pip install -r requirements.txt
+# ⚒️ Installation
+
+prerequisites: `3.11>=python>=3.8`, `CUDA>=11.3`, `ffmpeg` and `git`.
+
+Python and Git:
+
+- Python 3.10.11: https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe
+- git: https://git-scm.com/download/win
+
+Give unrestricted script access to powershell so venv can work:
+
+- Open an administrator powershell window
+- Type `Set-ExecutionPolicy Unrestricted` and answer A
+- Close admin powershell window
+
 ```
+git clone https://github.com/sdbds/ToonCrafter-for-window
+```
+
+Install with Powershell run `install.ps1` or `install-cn.ps1`(for Chinese)
+
+## No need Download models manually
 
 
 ## 💫 Inference
@@ -233,10 +249,7 @@ Download pretrained ToonCrafter_512 and put the `model.ckpt` in `checkpoints/too
 
 ### 2. Local Gradio demo
 
-Download the pretrained model and put it in the corresponding directory according to the previous guidelines.
-```bash
-  python gradio_app.py 
-```
+Powershell run with `run_inference.ps1`
 
 
 
