@@ -230,7 +230,7 @@ Give unrestricted script access to powershell so venv can work:
 - Close admin powershell window
 
 ```
-git clone https://github.com/sdbds/ToonCrafter-for-window
+git clone https://github.com/sdbds/ToonCrafter-for-windows
 ```
 
 Install with Powershell run `install.ps1` or `install-cn.ps1`(for Chinese)
