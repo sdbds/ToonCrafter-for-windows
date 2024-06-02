@@ -249,7 +249,7 @@ Download pretrained ToonCrafter_512 and put the `model.ckpt` in `checkpoints/too
 
 ### 2. Local Gradio demo
 
-Powershell run with `run_inference.ps1`
+Powershell run with `run_gui.ps1`
 
 
 
