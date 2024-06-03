@@ -9,6 +9,8 @@
  
 ## 🔆 Introduction
 
+⚠️ Please check our [disclaimer](#disc) first.
+
 🤗 ToonCrafter can interpolate two cartoon images by leveraging the pre-trained image-to-video diffusion priors. Please check our project page and paper for more information. <br>
 
 
@@ -193,6 +195,7 @@
 
 
 ## 📝 Changelog
+- [ ] Add sketch control and colorization function.
 - __[2024.05.29]__: 🔥🔥 Release code and model weights.
 - __[2024.05.28]__: Launch the project page and update the arXiv preprint.
 <br>
@@ -202,7 +205,7 @@
 
 |Model|Resolution|GPU Mem. & Inference Time (A100, ddim 50steps)|Checkpoint|
 |:---------|:---------|:--------|:--------|
-|ToonCrafter_512|320x512|12.8GB & 20s (`perframe_ae=True`)|[Hugging Face](https://huggingface.co/Doubiiu/ToonCrafter/blob/main/model.ckpt)|
+|ToonCrafter_512|320x512| TBD (`perframe_ae=True`)|[Hugging Face](https://huggingface.co/Doubiiu/ToonCrafter/blob/main/model.ckpt)|
 
 
 Currently, our ToonCrafter can support generating videos of up to 16 frames with a resolution of 512x320. The inference time can be reduced by using fewer DDIM steps.
@@ -211,12 +214,28 @@ Currently, our ToonCrafter can support generating videos of up to 16 frames with
 
 ## ⚙️ Setup
 
-### Install Environment via Anaconda (Recommended)
-```bash
-conda create -n tooncrafter python=3.8.5
-conda activate tooncrafter
-pip install -r requirements.txt
+# ⚒️ Installation
+
+prerequisites: `3.11>=python>=3.8`, `CUDA>=11.3`, `ffmpeg` and `git`.
+
+Python and Git:
+
+- Python 3.10.11: https://www.python.org/ftp/python/3.10.11/python-3.10.11-amd64.exe
+- git: https://git-scm.com/download/win
+
+Give unrestricted script access to powershell so venv can work:
+
+- Open an administrator powershell window
+- Type `Set-ExecutionPolicy Unrestricted` and answer A
+- Close admin powershell window
+
 ```
+git clone https://github.com/sdbds/ToonCrafter-for-windows
+```
+
+Install with Powershell run `install.ps1` or `install-cn.ps1`(for Chinese)
+
+## No need Download models manually
 
 
 ## 💫 Inference
@@ -230,10 +249,7 @@ Download pretrained ToonCrafter_512 and put the `model.ckpt` in `checkpoints/too
 
 ### 2. Local Gradio demo
 
-Download the pretrained model and put it in the corresponding directory according to the previous guidelines.
-```bash
-  python gradio_app.py 
-```
+Powershell run with `run_gui.ps1`
 
 
 
@@ -244,7 +260,11 @@ Download the pretrained model and put it in the corresponding directory accordin
 
 
 
-
+<a name="disc"></a>
 ## 📢 Disclaimer
+Calm down. Our framework opens up the era of generative cartoon interpolation, but due to the variaity of generative video prior, the success rate is not guaranteed.
+
+⚠️This is an open-source research exploration, instead of commercial products. It can't meet all your expectations.
+
 This project strives to impact the domain of AI-driven video generation positively. Users are granted the freedom to create videos using this tool, but they are expected to comply with local laws and utilize it responsibly. The developers do not assume any responsibility for potential misuse by users.
 ****
